@@ -1,0 +1,106 @@
+{
+    "data": [
+        {
+            "name": "数列",
+            "category": 0
+        },
+        {
+            "name": "基础",
+            "category": 1
+        },
+        {
+            "name": "等差数列",
+            "category": 1
+        },
+        {
+            "name": "等比数列",
+            "category": 1
+        },
+        {
+            "name": "一次函数",
+            "category": 2
+        },
+        {
+            "name": "增函数",
+            "category": 2
+        },
+        {
+            "name": "减函数",
+            "category": 2
+        },
+        {
+            "name": "概念",
+            "category": 2
+        },
+        {
+            "name": "通项公式1",
+            "category": 2
+        },
+        {
+            "name": "应用1",
+            "category": 2
+        },
+        {
+            "name": "概念定义",
+            "category": 2
+        },
+        {
+            "name": "通项公式2",
+            "category": 2
+        },
+        {
+            "name": "应用2",
+            "category": 2
+        }
+    ],
+    "links": [
+        {
+            "source": "数列",
+            "target": "基础"
+        },
+        {
+            "source": "数列",
+            "target": "等差数列"
+        },
+        {
+            "source": "数列",
+            "target": "等比数列"
+        },
+        {
+            "source": "基础",
+            "target": "一次函数"
+        },
+        {
+            "source": "基础",
+            "target": "增函数"
+        },
+        {
+            "source": "基础",
+            "target": "减函数"
+        },
+        {
+            "source": "等差数列",
+            "target": "概念"
+        },
+        {
+            "source": "等差数列",
+            "target": "通项公式1"
+        },
+        {
+            "source": "等差数列",
+            "target": "应用1"
+        },
+        {
+            "source": "等比数列",
+            "target": "概念定义"
+        },
+        {
+            "source": "等比数列",
+            "target": "通项公式2"
+        },
+        {
+            "source": "等比数列",
+            "target": "应用2"
+        }
+    ]
+}

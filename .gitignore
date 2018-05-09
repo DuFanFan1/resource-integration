@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+node_modules
+public/build
+log/all-logs.log
+log/filelog-info.log
+log/stderr.log
+log/stdout.log
+pm2_logs/app-err-0.log
+pm2_logs/app-out-0.log
+configure.js

@@ -1,0 +1,19 @@
+{
+  "name"        : "fis-test",  
+  "script"      : "./bin/www",  
+  "cwd"         : "./",  
+  "watch": [  
+    "bin",
+    "routes"
+  ],
+  "ignore_watch" : [ 
+    "node_modules",
+    "logs",
+    "public"
+  ],
+  "watch_options": {
+    "followSymlinks": false
+  },
+  "error_file" : "./pm2_logs/app-err.log",  
+  "out_file"   : "./pm2_logs/app-out.log"  
+}

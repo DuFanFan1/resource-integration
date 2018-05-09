@@ -1,0 +1,830 @@
+{
+    "tables": {
+        "deleteview": {
+            "tableName": "deleteview",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "kmapid": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kstruct_id": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge": {
+            "tableName": "knowledge",
+            "schema": {
+                "knowid": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "title": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "knowcontent": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(300)"
+                },
+                "description": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(300)"
+                },
+                "contribute": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(30)"
+                },
+                "keywords": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(300)"
+                },
+                "language": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(11)"
+                },
+                "applicability": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(11)"
+                },
+                "importance": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "difficulty": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "kcid1": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcid2": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcid3": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "addtime": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge_category": {
+            "tableName": "knowledge_category",
+            "schema": {
+                "kcid": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcname": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "parent_id": {
+                    "allowNull": false,
+                    "unique": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kclevel": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(2)"
+                },
+                "kcorder": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "is_del": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(1)"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge_map": {
+            "tableName": "knowledge_map",
+            "schema": {
+                "kmapid": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kmap_name": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(300)"
+                },
+                "kmap_desc": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(2000)"
+                },
+                "kmap_people": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(30)"
+                },
+                "kcid1": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcid2": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcid3": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "version": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "kmap_type": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "is_shared": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "addtime": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "update_time": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DATE"
+                },
+                "click_count": {
+                    "allowNull": true,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "edit_count": {
+                    "allowNull": true,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge_relation": {
+            "tableName": "knowledge_relation",
+            "schema": {
+                "krid": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kstruct_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "knowid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge_res_relation": {
+            "tableName": "knowledge_res_relation",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kstruct_id": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "knowid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "r_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "weight": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "auto_weight": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "expert_mark_weight": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "people_mark_weight": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "add_time": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "update_time": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge_struct": {
+            "tableName": "knowledge_struct",
+            "schema": {
+                "kstruct_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kmap_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "title": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "content": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(300)"
+                },
+                "contribute": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(30)"
+                },
+                "keywords": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(300)"
+                },
+                "pre_kstruct_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "addtime": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatetime": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "knowledge_struct_ different": {
+            "tableName": "knowledge_struct_ different",
+            "schema": {
+                "ksd_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kmapid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kmap_extend_id": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kdel_id": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kadd_id": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kedit_id": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "privilege": {
+            "tableName": "privilege",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "name": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "parentId": {
+                    "allowNull": false,
+                    "references": {
+                        "model": "knowledge_category",
+                        "key": "parent_id"
+                    },
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "description": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(255)"
+                }
+            },
+            "indexes": []
+        },
+        "resource": {
+            "tableName": "resource",
+            "schema": {
+                "r_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "r_name": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(200)"
+                },
+                "r_desc": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(2000)"
+                },
+                "r_content": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(200)"
+                },
+                "r_language": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "r_keyword": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(30)"
+                },
+                "kcid1": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcid2": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kcid3": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "rtypeid1": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "difficulty": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "contribute": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "purpose": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "size": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "copyright": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "annotation": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "createtime": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "r_status": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "r_grade": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(30)"
+                }
+            },
+            "indexes": []
+        },
+        "resource_answer": {
+            "tableName": "resource_answer",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(10)"
+                },
+                "answer": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(30)"
+                },
+                "r_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "resource_type": {
+            "tableName": "resource_type",
+            "schema": {
+                "rtypeid1": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "rtype_name": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "parent_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "rtype_corder": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "rtype_status": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(1)"
+                }
+            },
+            "indexes": []
+        },
+        "role": {
+            "tableName": "role",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "name": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "description": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(255)"
+                }
+            },
+            "indexes": []
+        },
+        "role_privilege": {
+            "tableName": "role_privilege",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "roleid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "privilegeid": {
+                    "allowNull": false,
+                    "references": {
+                        "model": "privilege",
+                        "key": "id"
+                    },
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "user": {
+            "tableName": "user",
+            "schema": {
+                "uid": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "username": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "password": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(50)"
+                },
+                "mobile_phone": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(50)"
+                },
+                "email": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.STRING(50)"
+                },
+                "birthday": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(50)"
+                },
+                "sex": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "status": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "role": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "scope": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "grade": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "course": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "created_at": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "updated_at": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "user_weight": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.DOUBLE(1,0)"
+                }
+            },
+            "indexes": []
+        },
+        "user_action_term": {
+            "tableName": "user_action_term",
+            "schema": {
+                "Ua_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "kmapid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "knowid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "r_id": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "device": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "location": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "connettype": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "addtime": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "collection": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "download": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(1)"
+                },
+                "browseTime": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "user_knowledge_grade": {
+            "tableName": "user_knowledge_grade",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(255)"
+                },
+                "useid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(23)"
+                },
+                "resourceid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(23)"
+                },
+                "grade": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(255)"
+                }
+            },
+            "indexes": []
+        },
+        "user_mark_knowres": {
+            "tableName": "user_mark_knowres",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "knowid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "r_id": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "weight": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DOUBLE(11,0)"
+                },
+                "add_time": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "update_time": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "Status": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(1)"
+                }
+            },
+            "indexes": []
+        },
+        "user_now_study_static": {
+            "tableName": "user_now_study_static",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "knowid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "user_resource_grade": {
+            "tableName": "user_resource_grade",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER(255)"
+                },
+                "useid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(23)"
+                },
+                "resourceid": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(23)"
+                },
+                "grade": {
+                    "allowNull": true,
+                    "seqType": "Sequelize.INTEGER(255)"
+                }
+            },
+            "indexes": []
+        },
+        "user_role": {
+            "tableName": "user_role",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "userid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "roleid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        },
+        "user_study_static": {
+            "tableName": "user_study_static",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "uid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "knowid": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "score": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DOUBLE(11,0)"
+                },
+                "state": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.INTEGER(11)"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}

@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    script(src='/build/common.js')
+    script(src='/build/question.js')
+body
+  block content
+    #react-container
+    script.
+        question.default.doit(!{id})
+
