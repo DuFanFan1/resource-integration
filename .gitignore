@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 public/build
+node_modules
 log/all-logs.log
 log/filelog-info.log
 log/stderr.log
